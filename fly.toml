@@ -1,0 +1,15 @@
+app = "fly-scale"
+
+[env]
+  PATH="/usr/local/bin"
+  TS_EXTRA_ARGS="--hostname=fly --advertise-exit-node"
+
+[build]
+  image = "tailscale/tailscale:stable"
+
+[deploy]
+  strategy="immediate"
+
+[mounts]
+  source="ts_data"
+  destination="/var"
